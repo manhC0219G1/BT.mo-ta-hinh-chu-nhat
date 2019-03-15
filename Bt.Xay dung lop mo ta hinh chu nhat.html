@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300" style="border:3px solid blue;"></canvas>
+<script>
+    let enter ="<br/>";
+    let Rectangle = function (height,width) {
+        this.height=height;
+        this.width =width;
+        this.getWidth =function () {
+            return this.width;
+        };
+        this.getHeight = function () {
+            return this.height;
+        };
+        this.setWidth =function (width) {
+            this.width =width;
+        };
+        this.setHeight =function (height) {
+            this.height=height;
+        };
+        this.getAcreage =function () {
+            return (height*width);
+        };
+        this.getPerimeter=function () {
+            return (height+width)*2;
+        };
+        this.draw = function () {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.fillStyle="blue";
+            ctx.fillRect(90,90,200,150)
+
+        }
+    };
+    let rectangle = new Rectangle(100,100);
+    document.write("Chu vi la :" +rectangle.getAcreage()+enter);
+    document.write("Dien tich la:" +rectangle.getPerimeter());
+    rectangle.draw();
+
+</script>
+</body>
+</html>
